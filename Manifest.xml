@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <plugin name="GeracaoEConsig" label="Geração e-Consig" plugin-version="1.0" ecidade-version="2.3.50" id-modulo="952">
+    <files>
+      <file name="GeracaoEConsig.xml"  path="/modification/xml/GeracaoEConsig.xml" />
+    </files>
+  </plugin>
+</manifest>

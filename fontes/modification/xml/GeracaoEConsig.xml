@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<modification>
+  <name>GeracaoEConsig</name>
+  <id id="GeracaoEConsig">GeracaoEConsig</id>
+  <ecidade-version>2.3.50</ecidade-version>
+
+  <file path='model/pessoal/arquivos/econsig/GeracaoArquivoRetornoEConsig.model.php'>
+    <operation>
+      <search regex="true"><![CDATA[(\$aEventosFinanceiros\s*=\s*\$oCalculoFinanceiro->getEventosFinanceiros\(0\s*,\s*\$oRubrica->getCodigo\(\)\s*\);)]]></search>
+      <add>
+        <![CDATA[$1
+        
+    if (empty($aEventosFinanceiros)) {
+        $oCalculoRescisao    = $oServidor->getCalculoFinanceiro(CalculoFolha::CALCULO_RESCISAO);
+        $aEventosFinanceiros = $oCalculoRescisao->getEventosFinanceiros(0, $oRubrica->getCodigo());
+    }
+
+]]></add>
+    </operation>
+  </file>
+</modification>
